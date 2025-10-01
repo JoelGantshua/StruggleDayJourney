@@ -46,7 +46,7 @@ export default function Contact() {
             </div>
             <div className="flex items-center space-x-3">
               <FaEnvelope className="text-blue-600 text-xl" />
-              <span>📧 contact@struggledayjourney.com</span>
+              <span>📧 hodeempire@gmail.com</span>
             </div>
           </div>
 

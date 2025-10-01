@@ -19,7 +19,7 @@ export default function Services() {
       {/* Hero Section avec image en fond */}
       {/* Hero Section style Watch.ME */}
 <section className="bg-white dark:bg-gray-800 flex relative z-20 items-center overflow-hidden">
-  <div className="container mx-auto px-6 flex flex-col-reverse sm:flex-row relative py-16">
+  <div className="container mx-auto px-5 flex flex-col-reverse sm:flex-row relative py-16">
     {/* Texte Hero */}
     <div className="sm:w-2/3 lg:w-2/5 flex flex-col relative z-20 text-center sm:text-left">
       <span className="w-20 h-2 bg-gray-800 dark:bg-white mb-12 mx-auto sm:mx-0"></span>
@@ -45,14 +45,14 @@ export default function Services() {
         <Link
           to="/contact"
           onClick={() => window.scrollTo(0, 0)}
-          className="uppercase py-2 px-4 rounded-lg bg-pink-500 border-2 border-transparent text-white text-md mr-4 hover:bg-pink-400"
+          className="uppercase py-2 px-4 rounded-lg bg-purple-700 border-2 border-transparent text-white text-md mr-4 hover:bg-blue-400"
         >
           Commencer
         </Link>
         <Link
           to="/#section"
           onClick={() => window.scrollTo(0, 0)}
-          className="uppercase py-2 px-4 rounded-lg bg-transparent border-2 border-pink-500 text-pink-500 dark:text-white hover:bg-pink-500 hover:text-white text-md"
+          className="uppercase py-2 px-4 rounded-lg bg-transparent border-2 border-purple-700 text-pink-500 dark:text-white hover:bg-blue-400 hover:text-white text-md"
         >
           En savoir plus
         </Link>
