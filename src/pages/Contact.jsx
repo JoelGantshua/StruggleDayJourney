@@ -49,8 +49,6 @@ export default function Contact() {
               <span>📧 hodeempire@gmail.com</span>
             </div>
           </div>
-
-          {/* Google Map intégrée */}
           <div className="mt-6 rounded-lg overflow-hidden shadow-lg">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d34558.68120754138!2d2.4078558343136938!3d48.863740810970214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66d45530eef85%3A0xa3aa7c6db0c45bf0!2s93100%20Montreuil%2C%20France!5e1!3m2!1sfr!2sma!4v1759172472580!5m2!1sfr!2sma"
@@ -73,14 +71,14 @@ export default function Contact() {
           <form ref={form} onSubmit={sendEmail} className="space-y-4">
             <input
               type="text"
-              name="from_name"   // ✅ correspond à {{from_name}} dans ton template
-              placeholder="Votre nom"
+              name="from_name"   // correspond  {{from_name}} dans ton template
+              placeholder="Votre nom complet"
               required
               className="w-full p-3 border border-gray-300 rounded-lg"
             />
             <input
               type="email"
-              name="from_email"   // ✅ correspond à {{from_email}}
+              name="from_email"   // correspond à {{from_email}}
               placeholder="Votre email"
               required
               className="w-full p-3 border border-gray-300 rounded-lg"
@@ -88,7 +86,7 @@ export default function Contact() {
 
             {/* Menu déroulant des services */}
             <select
-              name="from_service"  // ✅ correspond à {{from_service}} (corrigé la faute "serice")
+              name="from_services"  // correspond à {{from_service}} 
               required
               className="w-full p-3 border border-gray-300 rounded-lg"
             >
@@ -102,7 +100,7 @@ export default function Contact() {
             </select>
 
             <textarea
-              name="message"   // ✅ correspond à {{message}}
+              name="message"   // à {{message}}
               rows="5"
               placeholder="Votre message"
               required
