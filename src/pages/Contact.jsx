@@ -11,10 +11,10 @@ export default function Contact() {
 
     emailjs
       .sendForm(
-        "service_7241mlo", // ⚡ mets ton service ID EmailJS
-        "template_uz3hjln", // ⚡ mets ton template ID
+        "service_7241mlo", // ⚡ ton service ID
+        "template_uz3hjln", // ⚡ ton template ID
         form.current,
-        "LhgImiIizNgMuJ3ZZ" // ⚡ mets ta clé publique
+        "LhgImiIizNgMuJ3ZZ" // ⚡ ta clé publique
       )
       .then(
         () => {
@@ -42,7 +42,7 @@ export default function Contact() {
             </div>
             <div className="flex items-center space-x-3">
               <FaPhone className="text-blue-600 text-xl" />
-              <span>📞 +33 1 23 45 67 89</span>
+              <span>📞 +33 6 69 00 54 70</span>
             </div>
             <div className="flex items-center space-x-3">
               <FaEnvelope className="text-blue-600 text-xl" />
@@ -73,14 +73,14 @@ export default function Contact() {
           <form ref={form} onSubmit={sendEmail} className="space-y-4">
             <input
               type="text"
-              name="user_name"
+              name="from_name"   // ✅ correspond à {{from_name}} dans ton template
               placeholder="Votre nom"
               required
               className="w-full p-3 border border-gray-300 rounded-lg"
             />
             <input
               type="email"
-              name="user_email"
+              name="from_email"   // ✅ correspond à {{from_email}}
               placeholder="Votre email"
               required
               className="w-full p-3 border border-gray-300 rounded-lg"
@@ -88,7 +88,7 @@ export default function Contact() {
 
             {/* Menu déroulant des services */}
             <select
-              name="service_pack"
+              name="from_service"  // ✅ correspond à {{from_service}} (corrigé la faute "serice")
               required
               className="w-full p-3 border border-gray-300 rounded-lg"
             >
@@ -102,7 +102,7 @@ export default function Contact() {
             </select>
 
             <textarea
-              name="message"
+              name="message"   // ✅ correspond à {{message}}
               rows="5"
               placeholder="Votre message"
               required
