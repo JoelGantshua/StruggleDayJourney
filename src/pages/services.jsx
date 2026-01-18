@@ -100,7 +100,7 @@ export default function Services() {
                 <li>✓ Exercices adaptés</li>
                 <li>✓ Support motivationnel</li>
               </ul>
-              <div className="text-purple-400 font-bold text-lg mb-4">55€/mois</div>
+              <div className="text-purple-400 font-bold text-lg mb-4">60€/mois</div>
               <Link
                 to="/contact"
                 state={{ service: "Perte de Poids" }}
@@ -124,7 +124,7 @@ export default function Services() {
             </div>
             <div className="p-6">
               <h3 className="text-xl font-semibold mb-3 text-indigo-300">
-                Coaching Personnel
+                Coaching Personnel (1h par séance)
               </h3>
               <p className="mb-4 text-gray-400">
                 Des ateliers interactifs et du coaching individuel pour développer vos compétences
@@ -136,7 +136,7 @@ export default function Services() {
                 <li>✓ Développer et maximiser son potentiel</li>
                 <li>✓ Liberté financière et création de revenus</li>
               </ul>
-              <div className="text-purple-400 font-bold text-lg mb-4">70€/mois</div>
+              <div className="text-purple-400 font-bold text-lg mb-4">70€/Séance</div>
               <Link
                 to="/contact"
                 state={{ service: "Coaching Personnel" }}
@@ -166,7 +166,7 @@ export default function Services() {
                 Choisissez la formule adaptée à votre projet : Basic ou Premium.
               </p>
               <div className="bg-indigo-950 p-4 rounded mb-3">
-                <strong>Basic (120€)</strong>
+                <strong>Basic (145€)</strong>
                 <ul className="mt-2 space-y-1 text-gray-400">
                   <li>✓ Étude du projet</li>
                   <li>✓ Proposition d'amélioration / orientation</li>
@@ -174,7 +174,7 @@ export default function Services() {
                 </ul>
               </div>
               <div className="bg-purple-950 p-4 rounded mb-4">
-                <strong>Premium (260€)</strong>
+                <strong>Premium (650€)</strong>
                 <ul className="mt-2 space-y-1 text-gray-400">
                   <li>✓ Stratégie de pénétration du marché</li>
                   <li>✓ Stratégie commerciale, communication et marketing</li>
@@ -205,18 +205,21 @@ export default function Services() {
             </div>
             <div className="p-6">
               <h3 className="text-xl font-semibold mb-3 text-indigo-300">
-                Développement Personnel
+                Développement Personnel (4 mois)
               </h3>
               <p className="mb-4 text-gray-400">
-                Un programme complet pour transformer votre vie et atteindre vos objectifs.
+              Allier la guerison des traumas à l'expression de soi.
               </p>
               <ul className="mb-4 space-y-2 text-gray-400">
+                <li>✓ Liberation et sécurité interieure</li>
+                <li>✓ Reconstruction de l'estime de soi</li>
+                <li>✓ L'art de la parole </li>
                 <li>✓ Découverte de soi</li>
                 <li>✓ Intelligence émotionnelle</li>
                 <li>✓ Confiance et dépassement de soi</li>
                 <li>✓ Devenir la meilleure version de soi</li>
               </ul>
-              <div className="text-purple-400 font-bold text-lg mb-4">80€/mois</div>
+              <div className="text-purple-400 font-bold text-lg mb-4">80€/mois (Payable en 4 fois)</div>
               <Link
                 to="/contact"
                 state={{ service: "Développement Personnel" }}
@@ -242,6 +245,7 @@ export default function Services() {
               <h3 className="text-xl font-semibold mb-3 text-indigo-300">
                 Pack Complet
               </h3>
+              <p>Devenez l'atout majeur de votre propre réussite. L'éveil  du leader: identité, image, et impact business.</p>
               <p className="mb-4 text-gray-400">
                 L'offre ultime incluant tous nos services avec un tarif préférentiel. <br />
                 <strong>Payable en 3 fois</strong>
@@ -252,7 +256,7 @@ export default function Services() {
                 <li>✓ Accompagnement premium</li>
                 <li>✓ Atelier au choix</li>
               </ul>
-              <div className="text-purple-400 font-bold text-lg mb-4">435€/3 mois</div>
+              <div className="text-purple-400 font-bold text-lg mb-4">435€/6 mois</div>
               <Link
                 to="/contact"
                 state={{ service: "Pack Complet" }}
