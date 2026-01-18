@@ -24,17 +24,31 @@ export default function Contact() {
   const sendEmail = (e) => {
     e.preventDefault();
 
+    // Créer un objet avec les données du formulaire
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      from_service: formData.service,
+      message: formData.message
+    };
+
     emailjs
-      .sendForm(
-        "service_7241mlo", // ⚡ ton service ID
-        "template_uz3hjln", // ⚡ ton template ID
-        form.current,
-        "LhgImiIizNgMuJ3ZZ" // ⚡ ta clé publique
+      .send(
+        "service_7241mlo", // Votre service ID
+        "template_uz3hjln", // Votre template ID
+        templateParams,
+        "LhgImiIizNgMuJ3ZZ" // Votre clé publique
       )
       .then(
         () => {
           setSuccess(true);
-          form.current.reset();
+          // Réinitialiser le formulaire
+          setFormData({
+            name: "",
+            email: "",
+            service: "",
+            message: ""
+          });
         },
         (error) => {
           console.error("EmailJS Error:", error.text);
