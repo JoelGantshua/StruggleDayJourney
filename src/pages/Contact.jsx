@@ -24,25 +24,40 @@ export default function Contact() {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    // Créer un objet avec les données du formulaire
+    // Créer un message formaté pour l'email
+    const emailMessage = `
+      Bonjour,
+      
+      Vous avez reçu un nouveau message de contact :
+      
+      Nom: ${formData.name}
+      Email: ${formData.email}
+      Service: ${formData.service}
+      
+      Message:
+      ${formData.message || 'Aucun message supplémentaire'}
+      
+      ---
+      Ce message a été envoyé depuis le formulaire de contact du site web.
+    `;
+
     const templateParams = {
       from_name: formData.name,
       from_email: formData.email,
       from_service: formData.service,
-      message: formData.message
+      message: emailMessage  // Utilisation du message formaté
     };
 
     emailjs
       .send(
-        "service_7241mlo", // Votre service ID
-        "template_uz3hjln", // Votre template ID
+        "service_7241mlo",
+        "template_uz3hjln",
         templateParams,
-        "LhgImiIizNgMuJ3ZZ" // Votre clé publique
+        "LhgImiIizNgMuJ3ZZ"
       )
       .then(
         () => {
           setSuccess(true);
-          // Réinitialiser le formulaire
           setFormData({
             name: "",
             email: "",
