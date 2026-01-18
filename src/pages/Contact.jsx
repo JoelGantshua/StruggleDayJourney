@@ -1,11 +1,25 @@
 import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
-import { FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa";
+import { FaMapMarkerAlt, FaPhone, FaEnvelope, FaWhatsapp } from "react-icons/fa";
 
 export default function Contact() {
   const form = useRef();
   const [success, setSuccess] = useState(false);
   const [selectedService, setSelectedService] = useState("");
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    service: "",
+    message: ""
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -26,6 +40,14 @@ export default function Contact() {
           console.error("EmailJS Error:", error.text);
         }
       );
+  };
+
+  const sendWhatsApp = (e) => {
+    e.preventDefault();
+    const phoneNumber = "+2120669444701"; // Votre numéro de téléphone avec l'indicatif
+    const message = `Bonjour, je m'appelle ${formData.name}.\n\nJe suis intéressé(e) par le service : ${formData.service}.\n\n${formData.message ? `Mon message : ${formData.message}` : ''}\n\nEmail : ${formData.email}`;
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
   };
 
   return (
@@ -72,14 +94,18 @@ export default function Contact() {
           <form ref={form} onSubmit={sendEmail} className="space-y-4">
             <input
               type="text"
-              name="from_name"   // correspond  {{from_name}} dans ton template
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
               placeholder="Votre nom complet"
               required
               className="w-full p-3 border border-gray-300 rounded-lg"
             />
             <input
               type="email"
-              name="from_email"   // correspond à {{from_email}}
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
               placeholder="Votre email"
               required
               className="w-full p-3 border border-gray-300 rounded-lg"
@@ -87,9 +113,9 @@ export default function Contact() {
 
             {/* Menu déroulant des services */}
             <select
-              name="from_services"
-              value={selectedService}
-              onChange={(e) => setSelectedService(e.target.value)}
+              name="service"
+              value={formData.service}
+              onChange={handleChange}
               required
               className="w-full p-3 border border-gray-300 rounded-lg"
             >
@@ -103,19 +129,32 @@ export default function Contact() {
             </select>
 
             <textarea
-              name="message"   // à {{message}}
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
               rows="5"
               placeholder="Votre message"
               required
               className="w-full p-3 border border-gray-300 rounded-lg"
             ></textarea>
 
-            <button
-              type="submit"
-              className="w-full bg-blue-600 text-white font-semibold py-3 rounded-lg hover:bg-blue-700 transition"
-            >
-              Envoyer
-            </button>
+            <div className="flex flex-col space-y-3">
+              <button
+                type="submit"
+                className="w-full bg-blue-600 text-white font-semibold py-3 rounded-lg hover:bg-blue-700 transition flex items-center justify-center"
+              >
+                Envoyer par email
+              </button>
+              
+              <button
+                type="button"
+                onClick={sendWhatsApp}
+                className="w-full bg-green-500 text-white font-semibold py-3 rounded-lg hover:bg-green-600 transition flex items-center justify-center space-x-2"
+              >
+                <FaWhatsapp className="text-xl" />
+                <span>Envoyer par WhatsApp</span>
+              </button>
+            </div>
           </form>
           {success && (
             <p className="mt-4 text-green-600 text-center">
