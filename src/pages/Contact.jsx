@@ -5,6 +5,7 @@ import { FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa";
 export default function Contact() {
   const form = useRef();
   const [success, setSuccess] = useState(false);
+  const [selectedService, setSelectedService] = useState("");
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -86,7 +87,9 @@ export default function Contact() {
 
             {/* Menu déroulant des services */}
             <select
-              name="from_services"  // correspond à {{from_service}} 
+              name="from_services"
+              value={selectedService}
+              onChange={(e) => setSelectedService(e.target.value)}
               required
               className="w-full p-3 border border-gray-300 rounded-lg"
             >
