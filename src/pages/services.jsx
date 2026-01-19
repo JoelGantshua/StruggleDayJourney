@@ -62,7 +62,7 @@ export default function Services() {
     {/* Image Hero */}
     <div className="sm:w-1/3 lg:w-3/5 relative mb-8 sm:mb-0">
       <img
-        src="/images/site.jpeg" // 👉 place ton image dans public/images/
+        src="/images/one.jpeg" // 👉 place ton image dans public/images/
         alt="hero"
         className="max-w-xs md:max-w-sm lg:max-w-md m-auto"
       />
@@ -124,7 +124,7 @@ export default function Services() {
             </div>
             <div className="p-6">
               <h3 className="text-xl font-semibold mb-3 text-indigo-300">
-                Coaching Personnel (1h par séance)
+                Coaching Personnel 
               </h3>
               <p className="mb-4 text-gray-400">
                 Des ateliers interactifs et du coaching individuel pour développer vos compétences
@@ -219,7 +219,7 @@ export default function Services() {
                 <li>✓ Confiance et dépassement de soi</li>
                 <li>✓ Devenir la meilleure version de soi</li>
               </ul>
-              <div className="text-purple-400 font-bold text-lg mb-4">80€/mois (Payable en 4 fois)</div>
+              <div className="text-purple-400 font-bold text-lg mb-4">300€/mois (Payable en 4 fois)</div>
               <Link
                 to="/contact"
                 state={{ service: "Développement Personnel" }}
@@ -243,7 +243,7 @@ export default function Services() {
             </div>
             <div className="p-6">
               <h3 className="text-xl font-semibold mb-3 text-indigo-300">
-                Pack Complet
+                Boss Move 
               </h3>
               <p>Devenez l'atout majeur de votre propre réussite. L'éveil  du leader: identité, image, et impact business.</p>
               <p className="mb-4 text-gray-400">
@@ -251,10 +251,11 @@ export default function Services() {
                 <strong>Payable en 3 fois</strong>
               </p>
               <ul className="mb-4 space-y-2 text-gray-400">
-                <li>✓ Perte de poids</li>
-                <li>✓ Développement personnel</li>
-                <li>✓ Accompagnement premium</li>
-                <li>✓ Atelier au choix</li>
+                <li>✓ Mindset</li>
+                <li>✓ Image et Branding</li>
+                <li>✓ Networking</li>
+                <li>✓ Business</li>
+                <li>✓ VIP acces</li>
               </ul>
               <div className="text-purple-400 font-bold text-lg mb-4">435€/6 mois</div>
               <Link

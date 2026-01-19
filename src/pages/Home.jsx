@@ -48,10 +48,10 @@ export default function Home() {
     <div>
       {/* Hero Section avec image de fond (réduite à 80vh) */}
       <section
-        className="relative h-[80vh]  flex items-center justify-center text-center text-white"
+        className="relative h-[90vh]  flex items-center justify-center text-center text-white"
         style={{
           backgroundImage:
-            "url('/images/site2.jpeg')",
+            "url('/images/two.jpeg')",
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
