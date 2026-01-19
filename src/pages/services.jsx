@@ -62,7 +62,7 @@ export default function Services() {
     {/* Image Hero */}
     <div className="sm:w-1/3 lg:w-3/5 relative mb-8 sm:mb-0">
       <img
-        src="/images/one.jpeg" // 👉 place ton image dans public/images/
+        src="/images/one1.jpeg" // 👉 place ton image dans public/images/
         alt="hero"
         className="max-w-xs md:max-w-sm lg:max-w-md m-auto"
       />
@@ -219,14 +219,14 @@ export default function Services() {
                 <li>✓ Confiance et dépassement de soi</li>
                 <li>✓ Devenir la meilleure version de soi</li>
               </ul>
-              <div className="text-purple-400 font-bold text-lg mb-4">300€/mois (Payable en 4 fois)</div>
+              <div className="text-purple-400 font-bold text-lg mb-4">Payable en 4 fois</div>
               <Link
                 to="/contact"
                 state={{ service: "Développement Personnel" }}
                 onClick={() => window.scrollTo(0, 0)}
                 className="btn-primary"
               >
-                Transformer
+                Commencer
               </Link>
             </div>
           </motion.div>
@@ -243,12 +243,12 @@ export default function Services() {
             </div>
             <div className="p-6">
               <h3 className="text-xl font-semibold mb-3 text-indigo-300">
-                Boss Move 
+                Boss Move (6 mois)
               </h3>
               <p>Devenez l'atout majeur de votre propre réussite. L'éveil  du leader: identité, image, et impact business.</p>
               <p className="mb-4 text-gray-400">
                 L'offre ultime incluant tous nos services avec un tarif préférentiel. <br />
-                <strong>Payable en 3 fois</strong>
+                <strong>Payable en 4 fois</strong>
               </p>
               <ul className="mb-4 space-y-2 text-gray-400">
                 <li>✓ Mindset</li>
@@ -257,7 +257,7 @@ export default function Services() {
                 <li>✓ Business</li>
                 <li>✓ VIP acces</li>
               </ul>
-              <div className="text-purple-400 font-bold text-lg mb-4">435€/6 mois</div>
+              <div className="text-purple-400 font-bold text-lg mb-4">435€</div>
               <Link
                 to="/contact"
                 state={{ service: "Pack Complet" }}
