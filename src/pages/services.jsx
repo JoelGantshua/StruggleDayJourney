@@ -257,7 +257,7 @@ export default function Services() {
                 <li>✓ Business</li>
                 <li>✓ VIP acces</li>
               </ul>
-              <div className="text-purple-400 font-bold text-lg mb-4">435€</div>
+              <div className="text-purple-400 font-bold text-lg mb-4">Payable en 4 fois</div>
               <Link
                 to="/contact"
                 state={{ service: "Pack Complet" }}
