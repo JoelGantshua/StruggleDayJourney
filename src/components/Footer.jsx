@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { FaBrain } from "react-icons/fa";
 
 function Footer() {
   return (
@@ -69,7 +70,19 @@ function Footer() {
 
       {/* Bas de page */}
       <div className="text-center text-gray-500 text-sm mt-8">
-        © {new Date().getFullYear()} Struggle Day Journey. Tous droits réservés.
+        &copy; {new Date().getFullYear()} Struggle Day Journey. Tous droits réservés.
+        <div className="flex items-center justify-center mt-2">
+          <span className="mr-1">Développé par</span>
+          <a 
+            href="https://joel-gantshua.vercel.app/" 
+            target="_blank" 
+            rel="noreferrer" 
+            className="hover:text-blue-400 transition flex items-center"
+            title="Visiter braincode"
+          >
+            <FaBrain className="text-blue-400 text-lg" /> 
+          </a>
+        </div>
       </div>
     </footer>
   );
