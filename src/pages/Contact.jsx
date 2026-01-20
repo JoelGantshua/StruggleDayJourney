@@ -73,7 +73,7 @@ export default function Contact() {
 
   const sendWhatsApp = (e) => {
     e.preventDefault();
-    const phoneNumber = "+2120669444701"; // Votre numéro de téléphone avec l'indicatif
+    const phoneNumber = "+33 6 69 00 54 70"; // Votre numéro de téléphone avec l'indicatif
     const message = `Bonjour, je m'appelle ${formData.name}.\n\nJe suis intéressé(e) par le service : ${formData.service}.\n\n${formData.message ? `Mon message : ${formData.message}` : ''}\n\nEmail : ${formData.email}`;
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
@@ -90,15 +90,15 @@ export default function Contact() {
           <div className="space-y-6 text-gray-700">
             <div className="flex items-center space-x-3">
               <FaMapMarkerAlt className="text-blue-600 text-xl" />
-              <span>📍 Montreuil, France</span>
+              <span> Montreuil, France</span>
             </div>
             <div className="flex items-center space-x-3">
               <FaPhone className="text-blue-600 text-xl" />
-              <span>📞 +33 6 69 00 54 70</span>
+              <span> +33 6 69 00 54 70</span>
             </div>
             <div className="flex items-center space-x-3">
               <FaEnvelope className="text-blue-600 text-xl" />
-              <span>📧 hodeempire@gmail.com</span>
+              <span> hodeempire@gmail.com</span>
             </div>
           </div>
           <div className="mt-6 rounded-lg overflow-hidden shadow-lg">
