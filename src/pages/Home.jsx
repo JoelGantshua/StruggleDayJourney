@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 
@@ -13,36 +13,32 @@ const fadeUp = {
 };
 
 export default function Home() {
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  
   const testimonials = [
     {
       id: 1,
-      name: "Marie Dupont",
+      name: "Laury Sharone",
       city: "Paris",
-      img: "https://randomuser.me/api/portraits/women/44.jpg",
-      text: "Une équipe formidable qui m’a aidée à dépasser mes limites et atteindre mes objectifs.",
+      img: "./images/site.jpeg",
+      text: "J'ai eu l'opportunité d'un mois de coaching gratuit, qui s'est révélé extrêmement bénéfique. Ce suivi m'a permis d'adopter des meilleures habitudes alimentaires et sportives adaptées à mes besoins. En un mois, j'ai constaté une progression significative, passant de 50kg à 5è kg, tout en améliorant mon énergie et mon bien-être général. Un accompagnement de qualité que je recommande vivement.",
     },
     {
       id: 2,
-      name: "Ahmed Benali",
-      city: "Casablanca",
-      img: "https://randomuser.me/api/portraits/men/32.jpg",
-      text: "Le coaching m’a permis de clarifier ma vision professionnelle.",
-    },
-    {
-      id: 3,
-      name: "Clara Rossi",
-      city: "Rome",
-      img: "https://randomuser.me/api/portraits/women/68.jpg",
-      text: "Des formations de qualité, interactives et motivantes !",
-    },
-    {
-      id: 4,
-      name: "Jean-Paul Martin",
-      city: "Lyon",
-      img: "https://randomuser.me/api/portraits/men/56.jpg",
-      text: "Une expérience enrichissante qui a transformé ma carrière.",
+      name: "Brigitte M.",
+      city: "Lille",
+      img: "./images/tst.jpg",
+      text: "Le coaching gratuit d'un mois m'a vraiment beaucoup aidé, au niveau de l'alimentation et du sport. Ce n'était pas seulement un programme sportif, j'ai appris à mieux manger, mieux m'organiser à la salle. En 1 mois, j'ai vu une vraie transformation, je suis passé de 106 kilos à 95 kilos et je me sens beaucoup mieux dans mon corps. J'ai aussi gagné en confiance en moi. Au début je ne savais pas trop comment organiser mes séances à la salle mais vous m'avez donné des exemples d'exercices à faire à la salle ce qui m'a aidé à prendre un bon rythme. Également pour l'alimentation, j'ai eu un vrai suivi avec des conseils qui m'ont permis de savoir ce que je dois manger. Vous avez cru en moi alors que même moi malgré ma motivation je n'ai pas eu autant confiance en moi pour la perte de poids. J'ai décidé de continuer avec vous parce que le mois gratuit s'est très bien passé. Je tiens à vous remercier pour votre patience, votre disponibilité et votre motivation.",
     },
   ];
+
+  const nextTestimonial = () => {
+    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+  };
+
+  const prevTestimonial = () => {
+    setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+  };
 
   return (
     <div>
@@ -133,7 +129,6 @@ export default function Home() {
   ))}
 </section>
 
-
       {/* Call To Action */}
       <motion.section
         initial="hidden"
@@ -161,65 +156,53 @@ export default function Home() {
           </motion.div>
       </motion.section>
 
-      {/* Témoignages en deux lignes, sens opposés */}
-      <section className="py-10 bg-gray-100 overflow-hidden ">
-        <h2 className="text-3xl font-bold text-center mb-10">Témoignages</h2>
-
-        {/* Ligne 1 → gauche */}
-        <motion.div
-          className="flex gap-6 mb-8"
-          animate={{ x: ["0%", "-100%"] }}
-          transition={{
-            repeat: Infinity,
-            duration: 25,
-            ease: "linear",
-          }}
-          style={{ width: "max-content" }}
-        >
-          {[...testimonials, ...testimonials].map((t, index) => (
-            <div
-              key={index}
-              className="bg-white shadow-md p-4 rounded-lg w-60 flex-shrink-0 text-center"
-            >
-              <img
-                src={t.img}
-                alt={t.name}
-                className="w-14 h-14 rounded-full mx-auto mb-3"
-              />
-              <p className="italic text-gray-600 text-sm">"{t.text}"</p>
-              <h4 className="mt-2 font-bold">{t.name}</h4>
-              <p className="text-xs text-gray-500">{t.city}</p>
+      {/* Témoignages */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">Ce que disent nos clients</h2>
+          <div className="max-w-3xl mx-auto">
+            <div className="bg-white rounded-lg shadow-md p-6 relative">
+              <div className="flex items-center mb-4">
+                <img 
+                  src={testimonials[currentTestimonial].img} 
+                  alt={testimonials[currentTestimonial].name}
+                  className="w-16 h-16 rounded-full object-cover mr-4"
+                />
+                <div>
+                  <h3 className="font-semibold text-lg">{testimonials[currentTestimonial].name}</h3>
+                  <p className="text-gray-600">{testimonials[currentTestimonial].city}</p>
+                </div>
+              </div>
+              <div 
+                className="text-gray-700 mb-6 max-h-60 overflow-y-auto pr-2"
+                style={{ scrollbarWidth: 'thin', scrollbarColor: '#a78bfa #e2e8f0' }}
+              >
+                <p className="italic">"{testimonials[currentTestimonial].text}"</p>
+              </div>
+              
+              {/* Boutons de navigation */}
+              <div className="flex justify-between items-center pt-4 border-t border-gray-100">
+                <button
+                  onClick={prevTestimonial}
+                  className="px-4 py-2 bg-indigo-100 text-indigo-700 rounded-md hover:bg-indigo-200 transition-colors"
+                  disabled={testimonials.length <= 1}
+                >
+                  Précédent
+                </button>
+                <div className="text-sm text-gray-500">
+                  {currentTestimonial + 1} / {testimonials.length}
+                </div>
+                <button
+                  onClick={nextTestimonial}
+                  className="px-4 py-2 bg-indigo-600 text-white rounded-md hover:bg-indigo-700 transition-colors"
+                  disabled={testimonials.length <= 1}
+                >
+                  Suivant
+                </button>
+              </div>
             </div>
-          ))}
-        </motion.div>
-
-        {/* Ligne 2 → droite */}
-        <motion.div
-          className="flex gap-6"
-          animate={{ x: ["-100%", "0%"] }}
-          transition={{
-            repeat: Infinity,
-            duration: 25,
-            ease: "linear",
-          }}
-          style={{ width: "max-content" }}
-        >
-          {[...testimonials, ...testimonials].map((t, index) => (
-            <div
-              key={index}
-              className="bg-white shadow-md p-4 rounded-lg w-60 flex-shrink-0 text-center"
-            >
-              <img
-                src={t.img}
-                alt={t.name}
-                className="w-14 h-14 rounded-full mx-auto mb-3"
-              />
-              <p className="italic text-gray-600 text-sm">"{t.text}"</p>
-              <h4 className="mt-2 font-bold">{t.name}</h4>
-              <p className="text-xs text-gray-500">{t.city}</p>
-            </div>
-          ))}
-        </motion.div>
+          </div>
+        </div>
       </section>
     </div>
   );
