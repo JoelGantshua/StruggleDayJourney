@@ -81,7 +81,7 @@ export default function Contact() {
       `Je suis intéressé(e) par le service : ${formData.service}.
 
 ` +
-      `${formData.message ? `: ${formData.message}` : ''}
+      `${formData.message ? ` ${formData.message}` : ''}
 
 ` +
       `Email : ${formData.email}`
