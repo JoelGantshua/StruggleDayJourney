@@ -73,7 +73,7 @@ export default function Contact() {
 
   const sendWhatsApp = (e) => {
     e.preventDefault();
-    const phoneNumber = "+33669005470"; // Numéro sans espaces ni caractères spéciaux
+    const phoneNumber = "+212669444701"; // Numéro sans espaces ni caractères spéciaux
     const message = encodeURIComponent(
       `Bonjour, je m'appelle ${formData.name}.
 
