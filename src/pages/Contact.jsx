@@ -73,10 +73,20 @@ export default function Contact() {
 
   const sendWhatsApp = (e) => {
     e.preventDefault();
-    const phoneNumber = "+33 6 69 00 54 70"; // Votre numéro de téléphone avec l'indicatif
-    const message = `Bonjour, je m'appelle ${formData.name}.\n\nJe suis intéressé(e) par le service : ${formData.service}.\n\n${formData.message ? `Mon message : ${formData.message}` : ''}\n\nEmail : ${formData.email}`;
-    const encodedMessage = encodeURIComponent(message);
-    window.open(`https://wa.me/${phoneNumber}?text=${encodedMessage}`, '_blank');
+    const phoneNumber = "+33669005470"; // Numéro sans espaces ni caractères spéciaux
+    const message = encodeURIComponent(
+      `Bonjour, je m'appelle ${formData.name}.
+
+` +
+      `Je suis intéressé(e) par le service : ${formData.service}.
+
+` +
+      `${formData.message ? `Mon message : ${formData.message}` : ''}
+
+` +
+      `Email : ${formData.email}`
+    );
+    window.open(`https://wa.me/${phoneNumber}?text=${message}`, '_blank');
   };
 
   return (
