@@ -21,7 +21,7 @@ export default function Home() {
       name: "Laury Sharone",
       city: "Paris",
       img: "./images/site.jpeg",
-      text: "J'ai eu l'opportunité d'un mois de coaching gratuit, qui s'est révélé extrêmement bénéfique. Ce suivi m'a permis d'adopter des meilleures habitudes alimentaires et sportives adaptées à mes besoins. En un mois, j'ai constaté une progression significative, passant de 50kg à 5è kg, tout en améliorant mon énergie et mon bien-être général. Un accompagnement de qualité que je recommande vivement.",
+      text: "J'ai eu l'opportunité d'un mois de coaching gratuit, qui s'est révélé extrêmement bénéfique. Ce suivi m'a permis d'adopter des meilleures habitudes alimentaires et sportives adaptées à mes besoins. En un mois, j'ai constaté une progression significative, passant de 50kg à 57 kg, tout en améliorant mon énergie et mon bien-être général. Un accompagnement de qualité que je recommande vivement.",
     },
     {
       id: 2,
